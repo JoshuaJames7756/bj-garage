@@ -1,45 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>B&J Garage</title>
-
-  <!-- 🔐 Netlify Identity -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-  <!-- Tus estilos -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
-  <h1>Bienvenido a B&J Garage 🚗</h1>
-
-  <!-- Aquí irá tu contenido -->
-  <div id="app"></div>
-
-  <!-- Tu JS -->
-  <script src="main.js"></script>
-
-  <!-- 🔥 Manejo de confirmación y login -->
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        const hash = window.location.hash;
-
-        // 👉 Detecta confirmación desde el email
-        if (hash.includes("confirmation_token")) {
-          window.netlifyIdentity.open();
-        }
-
-        // 👉 Redirige al admin después de login
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      });
-    }
-  </script>
-
-</body>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  </body>
 </html>

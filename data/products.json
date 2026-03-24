@@ -53,6 +53,15 @@
       "description": "Primera generación del Camaro en su año más icónico. Edición muscle classic.",
       "image": "",
       "featured": true
+    },
+    {
+      "scale": "1:64",
+      "featured": true,
+      "name": "Mazda",
+      "brand": "Auto World",
+      "price": 250,
+      "description": "Magico Mazda cx-50",
+      "image": "https://www.mazdausa.com/siteassets/vehicles/2026/cx-50/04_btv/001_trims/34-jellies/turbo-premium-plus/2026-cx50-2-5-turbo-premium-plues-cypress.png"
     }
   ]
 }

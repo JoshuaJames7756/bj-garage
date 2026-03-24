@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>B&J Garage — Panel de Administración</title>
 
-  <!-- 🔐 Netlify Identity (ESTO TE FALTABA) -->
+  <!-- 🔐 Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <!-- CMS manual -->
@@ -21,6 +21,17 @@
     window.CMS.init({
       config: "/admin/config.yml"
     });
+  </script>
+
+  <!-- 🔥 FORZAR REGISTRO -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.open("signup");
+        }
+      });
+    }
   </script>
 </body>
 </html>

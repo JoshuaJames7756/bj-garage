@@ -5,7 +5,7 @@
 
 backend:
   name: git-gateway
-  branch: main          # Cambiá a "master" si tu rama principal se llama así
+  branch: master          # Cambiá a "master" si tu rama principal se llama así
 
 # Carpeta donde se guardan las imágenes que sube el cliente
 media_folder: "uploads"

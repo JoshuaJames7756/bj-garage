@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>B&J Garage — Panel de Administración</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B&J Garage</title>
 
   <!-- 🔐 Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-  <!-- CMS manual -->
-  <script>
-    window.CMS_MANUAL_INIT = true;
-  </script>
-
-  <!-- Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <!-- Tus estilos -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <script>
-    window.CMS.init({
-      config: "/admin/config.yml"
-    });
-  </script>
 
-  <!-- 🔥 FORZAR REGISTRO -->
+<body>
+
+  <h1>Bienvenido a B&J Garage 🚗</h1>
+
+  <!-- Aquí irá tu contenido -->
+  <div id="app"></div>
+
+  <!-- Tu JS -->
+  <script src="main.js"></script>
+
+  <!-- 🔥 Manejo de confirmación y login -->
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.open("signup");
+        const hash = window.location.hash;
+
+        // 👉 Detecta confirmación desde el email
+        if (hash.includes("confirmation_token")) {
+          window.netlifyIdentity.open();
         }
+
+        // 👉 Redirige al admin después de login
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
       });
     }
   </script>
+
 </body>
 </html>

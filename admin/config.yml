@@ -7,10 +7,8 @@ backend:
   name: git-gateway
   branch: master
 
-local_backend: true
 publish_mode: editorial_workflow
 
-# Carpeta donde se guardan las imágenes que sube el cliente
 media_folder: "uploads"
 public_folder: "/uploads"
 
